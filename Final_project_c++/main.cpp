@@ -17,27 +17,27 @@ int main()
         cin >> choice;
         switch (choice) {
             case 1:
-                cout << "Выполняю замер..." << endl;
+                cout << "Виконую замір..." << endl;
                 break;
             case 2:
-                cout << "Список всех танков:" << endl;
+                cout << "Список усіх танків:" << endl;
                 break;
             case 3:
-                cout << "Таблица замеров:" << endl;
+                cout << "Таблиця вимірів:" << endl;
                 Print_table();
                 Show_menu();
                 break;
             case 4:
-                cout << "Расчет массы..." << endl;
+                cout << "Розрахунок маси..." << endl;
                 break;
             case 5:
-                cout << "Справка по программе..." << endl;
+                cout << "Справка за програмою..." << endl;
                 break;
             case 0:
-                cout << "Выход из программы" << endl;
+                cout << "Вихід із програми" << endl;
                 break;
             default:
-                cout << "Ошибка! Выберите пункт от 0 до 5." << endl;
+                cout << "Помилка! Виберіть від 0 до 5." << endl;
                 break;
         }
     }
