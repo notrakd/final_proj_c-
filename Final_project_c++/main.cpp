@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, ".UTF8");
-    cout << "Обери пункт: ";
+    cout << "Обери пункт: " << endl;
 
     int choice = -1;
     Show_menu();
@@ -21,10 +21,15 @@ int main()
                 break;
             case 2:
                 cout << "Список усіх танків:" << endl;
+                cout << "Танк 1:" << "\n";
+                cout << "Tank_TEU1800";
+                cout << endl;
+                Show_menu();
                 break;
             case 3:
                 cout << "Таблиця вимірів:" << endl;
                 Print_table();
+                cout << endl;
                 Show_menu();
                 break;
             case 4:
