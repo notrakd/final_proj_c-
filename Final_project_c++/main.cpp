@@ -1,4 +1,5 @@
 #include <iostream>
+//#include "test_hed_funk.h"
 #include "header.h"
 #include <iomanip>
 using namespace std;
@@ -17,7 +18,8 @@ int main()
         cin >> choice;
         switch (choice) {
             case 1:
-                cout << "Виконую замір..." << endl;
+                // Measurements();
+                // Show_menu();
                 break;
             case 2:
                 cout << "Список усіх танків:" << endl;
