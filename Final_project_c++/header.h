@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <iomanip>
 using namespace std;
 
@@ -21,13 +22,9 @@ struct Tank_TEU18
     float imom;
 };
 
-
-void Print_table()
-{
-
     const int params = 13;
-    const int size = 17;
-    Tank_TEU18 table[size] = {
+    const int TABLE_SIZE = 17;
+    Tank_TEU18 table[TABLE_SIZE] = {
      { 0, 2.17, 1.77, 1.37, 1.01, 0.76, 0.63, 2.57, 9.3, 24.22, 0.00, 0.66, 15.8 },
      { 5, 3.51, 3.11, 2.70, 2.30, 1.91, 1.55, 3.91, 15.0, 24.21, 0.00, 0.69, 15.8 },
      { 10, 4.85, 4.44, 4.04, 3.64, 3.24, 2.84, 5.25, 20.7, 24.22, 0.00, 0.71, 15.8 },
@@ -47,6 +44,9 @@ void Print_table()
      { 80, 23.43, 23.17, 22.77, 22.38, 21.98, 21.57, 23.43, 100.0, 24.21, 0.00, 1.06, 0.0 }
     };
 
+
+void Print_table()
+{
 
 
     cout << fixed << setprecision(2);
@@ -87,7 +87,7 @@ void Print_table()
     }
     cout << endl;
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < TABLE_SIZE; i++)
     {
         cout << setw(6) << table[i].grauge
             << setw(8) << table[i].tr_0
@@ -120,3 +120,45 @@ void Show_menu()
 }
 
 
+void Measurements()
+{
+    float gauge;
+    cout << "Танк: TEU1800" << endl;
+    cout << "Міст: Oil" << endl;
+    cout << "Максимальний замір: 80 см" << endl;
+    cout << "Введіть замір (0-80 см): ";
+    cin >> gauge;
+
+    if(gauge < 0 || gauge > 80)
+    {
+        cout << "Помилка! Поза межами.";
+        return;
+    }
+
+
+    for(int i = 0; i < TABLE_SIZE; i++)
+    {
+        if(table[i].grauge == gauge)
+        {
+            cout << "Знайдене значення в таблиці: ";
+            cout << "Fill " << table[i].fill << endl;
+            cout << "LCG " << table[i].lcg << endl;
+            cout << "TCG " << table[i].tcg << endl;
+            cout << "VCG " << table[i].vcg << endl;
+            cout << "IMOM " << table[i].imom << endl;
+            return;
+        }
+    }
+
+
+
+    for(int i = 0; i < TABLE_SIZE; i++)
+    {
+        if(gauge >= table[i].grauge && gauge <= table[i+1].grauge)
+        {
+            float g1 = table[i].grauge;
+            float g2 = table[i+1].grauge;
+            break;
+        }
+    }
+}
