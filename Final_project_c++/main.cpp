@@ -36,7 +36,11 @@ int main()
             Show_menu();
             break;
         case 4:
-            cout << "Розрахунок маси..." << endl;
+            cout << "Розрахунок маси" << endl;
+            Calculate_mass();
+            cout << endl;
+            Show_menu();
+            cout << endl;
             break;
         case 5:
             cout << "ДОВIДКА ЗА ПРОГРАМОЮ" << endl;
@@ -82,6 +86,12 @@ int main()
             break;
         case 0:
             cout << "Вихiд iз програми" << endl;
+            break;
+        case 10:
+            cout << "Дуже дякуємо що подивились нашу програму";
+            Heart();
+            cout << endl;
+            Show_menu();
             break;
         default:
             cout << "Помилка! Виберiть вд 0 до 5." << endl;
